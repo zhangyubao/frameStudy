@@ -15,7 +15,7 @@ import de.greenrobot.daogenerator.Schema;
  *  2、封装service类用来实现数据库的CRUD（BaseService）
  *  3、封装一个核心类用来获取数据库管理器及会话对象(DBCore)
  *  4、封装工具类用来获取Service服务对象（DBUtils）
- *
+ *  5、在Application中初始化数据库DBCore.initilize();
  *
  */
 public class NewGenerator {
