@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:custom_view="http://schemas.android.com/apk/res/com.zbao.news"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/activity_flash"
+                android:fitsSystemWindows="true"
+                android:padding="@dimen/flash_padding">
+
+    <com.zbao.news.custonView.LoadProgressView
+        android:id="@+id/lpv_enter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:padding="10dp"
+        custom_view:circleColor="@color/cardview_shadow_start_color"
+        custom_view:radius="20dip"
+        custom_view:textSize="16sp"
+        custom_view:ringColor="@color/ring_color"
+        custom_view:strokeWidth="5dip"/>
+</RelativeLayout>

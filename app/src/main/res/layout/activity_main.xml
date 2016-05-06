@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <me.majiajie.pagerbottomtabstrip.PagerBottomTabLayout
+        android:id="@+id/menu_tab"
+        android:background="@color/menu_bottom_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:elevation="0dp"/>
+
+    <RadioGroup
+        android:id="@+id/rg_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/menu_bottom_bg"
+        android:orientation="horizontal"
+        android:padding="@dimen/menu_bottom_padding"
+        android:visibility="gone">
+
+        <RadioButton
+            android:id="@+id/rbtn_news"
+            style="@style/menu_bottom"
+            android:drawableTop="@drawable/menu_new_selector"
+            android:text="@string/news"/>
+
+        <RadioButton
+            android:id="@+id/rbtn_jokes"
+            style="@style/menu_bottom"
+            android:drawableTop="@drawable/menu_joke_selector"
+            android:text="@string/jokes"/>
+
+        <RadioButton
+            android:id="@+id/rbtn_videos"
+            style="@style/menu_bottom"
+            android:drawableTop="@drawable/menu_video_selector"
+            android:text="@string/video"/>
+
+        <RadioButton
+            android:id="@+id/rbtn_mine"
+            style="@style/menu_bottom"
+            android:drawableTop="@drawable/menu_mine_selector"
+            android:text="@string/mine"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/ll_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/menu_tab"
+        android:background="@color/cardview_shadow_start_color"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+</RelativeLayout>

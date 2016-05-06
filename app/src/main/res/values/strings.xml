@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">网罗天下</string>
+    <string name="news">新闻</string>
+    <string name="jokes">娱乐</string>
+    <string name="video">视频</string>
+    <string name="mine">我的</string>
+    <string name="load_failure">数据获取失败</string>
+    <string name="app_description">在Android 6.0中谷歌摒弃了之前的instmodel，这个大家不陌生，就是当Android App安装的时候会向用户展示一坨权限，如果此时用户选择安装，则表示用户同意将这些权限赋予App，如果用户不同意那么这个App就会取消安装。runtime permissions model就牛逼了，在App安装的时候同样会向用户展示所需要的权限，并且在用户选择安装App的时候并不表示用户将这些权限赋予了App，而是需要App在运行阶段主动去申请这些权限。这样做的好处显而易见，App对权限的申请对于用户来说变得更加透明，而且用户对App权限的控制也更加灵活。</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

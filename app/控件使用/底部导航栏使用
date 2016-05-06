@@ -1,0 +1,45 @@
+在XML布局中添加一个底部导航栏控件
+
+<me.majiajie.pagerbottomtabstrip.PagerBottomTabLayout
+        android:id="@+id/tab"
+        app:elevation="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+然后在Activity中初始化
+
+PagerBottomTabLayout bottomTabLayout = (PagerBottomTabLayout) findViewById(R.id.tab);
+
+bottomTabLayout.builder()
+        .addTabItem(android.R.drawable.ic_menu_camera, "相机")
+        .addTabItem(android.R.drawable.ic_menu_compass, "位置")
+        .addTabItem(android.R.drawable.ic_menu_search, "搜索")
+        .addTabItem(android.R.drawable.ic_menu_help, "帮助")
+        .build();
+通过上面的2个步骤，最基本的底部导航栏就出来了，按钮默认选中颜色是取的colorAccent
+
+.builder()后面还可以设置很多有关导航栏的属性，具体看这里：导航栏构建属性
+
+构建完成之后就需要对导航栏进行一些控制，比如手动控制选中项、添加事件监听等等，上面构建完成调用的build()返回一个Controller接口的实现类，通过Controller就可以对导航栏进行后续控
+完成导航栏构建获得Controller实例后就可以进行对导航栏的后续控制
+
+addTabItemClickListener
+最常用的方法，添加导航栏选中监听，回掉的监听分解成了2个，一个是选中，另一个在已经选中的状态下重复选中。
+
+setMessageNumber
+设置某个导航按钮的消息数字，需要传入2个参数，一个索引（顺数数字、Tag）和消息数字。
+
+setDisplayOval
+设置是否显示一个无数字的消息小红点，true显示
+
+setSelect
+手动设置选中项
+
+getSelected
+获得当前的选中项的索引数字
+
+getSelectedTag
+获取当前选中项的TAG
+
+setBackgroundColor、setBackground、setBackgroundResource
+都是设置导航栏背景的
