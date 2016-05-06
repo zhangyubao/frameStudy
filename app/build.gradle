@@ -55,4 +55,5 @@ dependencies {
     compile 'me.majiajie:pager-bottom-tab-strip:1.0.0'
     /*创建引导页*/
     compile 'com.github.chyrta:AndroidOnboarder:0.6'
+    compile 'de.greenrobot:greendao:2.0.0'
 }
