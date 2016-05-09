@@ -18,7 +18,12 @@ android {
         }
     }
 }
-
+/*
+ 平台免入侵框架so库
+native_dependencies {
+    artifact 'com.taobao.dexposed:dexposed_l:0.2+:armeabi'
+    artifact 'com.taobao.dexposed:dexposed:0.2+:armeabi'
+}*/
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -56,5 +61,9 @@ dependencies {
     compile 'me.majiajie:pager-bottom-tab-strip:1.0.0'
     /*创建引导页*/
     compile 'com.github.chyrta:AndroidOnboarder:0.6'
+    /*数据库ORM框架*/
     compile 'de.greenrobot:greendao:2.0.0'
+    /*平台免入侵框架*/
+    /*compile 'com.taobao.android:dexposed:0.1.1@aar'*/
 }
+apply plugin: 'maven'
