@@ -10,6 +10,8 @@ import static org.junit.Assert.assertEquals;
  * 可以直接在机器上执行的代码(即可以直接在开发工具或者开发环境下运行的代码)
  * <p/>
  * <p/>
+ * Mockito使用 进行无返回值的单元测试
+ * http://chriszou.com/2016/04/29/android-unit-testing-mockito.html
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
 public class ExampleUnitTest {
