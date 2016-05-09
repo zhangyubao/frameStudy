@@ -32,6 +32,21 @@ public class MineFragment extends BaseFragment {
 
     private TestThread mTestThread;
 
+    /**
+     * 结束线程的方法：
+     * <p/>
+     * 1、给线程设置标记当当前Activity或者Fragment销毁时结束线程
+     * <p/>
+     * 2、初始化的时候定义启动的线程为守护线程,这样当主线程消亡的时候,其他线程也会被终止
+     * <p/>
+     * 3、if (myThread != null) {
+     * 　　   Thread dummy = myThread;
+     * 　　   myThread = null;
+     * 　　   dummy.interrupt();
+     * 　　}
+     */
+    private boolean isTrue = true;
+
     public MineFragment() {
 
     }
@@ -69,19 +84,20 @@ public class MineFragment extends BaseFragment {
         @Override
         public void run() {
             super.run();
-            while (true)
-               Log.e("TAG","当前线程~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            while (isTrue)
+                Log.e("TAG", "当前线程~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        mTestThread.stop();
+        isTrue = false;
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        isTrue = false;
     }
 }
