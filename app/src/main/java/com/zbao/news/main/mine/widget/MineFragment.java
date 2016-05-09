@@ -79,7 +79,6 @@ public class MineFragment extends BaseFragment {
 
     }
 
-
     private class TestThread extends Thread {
         @Override
         public void run() {
