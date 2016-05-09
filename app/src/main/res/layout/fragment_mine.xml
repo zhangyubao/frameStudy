@@ -1,14 +1,35 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:background="@color/colorPrimary"
-             tools:context=".main.mine.widget.MineFragment">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/cardview_shadow_end_color"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              tools:context=".main.mine.widget.MineFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/iv_user_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/flash_padding"
+        android:paddingTop="@dimen/flash_padding"
+        android:src="@mipmap/ic_default_user_image_normal"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/flash_padding"
+        android:text="设置"
+        android:textSize="@dimen/mine_text_size"/>
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/flash_padding"
+        android:text="密码设置"
+        android:textSize="@dimen/mine_text_size"/>
+
+</LinearLayout>

@@ -76,7 +76,7 @@ public class MainActivity extends BaseActivity implements OnTabItemSelectListene
      */
     private void addMenuTable() {
         mController = menuTab.builder()
-                .addTabItem(R.drawable.menu_new_selector, getResources().getString(R.string.news))
+                    .addTabItem(R.drawable.menu_new_selector, getResources().getString(R.string.news))
                 .addTabItem(R.drawable.menu_joke_selector, getResources().getString(R.string.jokes))
                 .addTabItem(R.drawable.menu_video_selector, getResources().getString(R.string.video))
                 .addTabItem(R.drawable.menu_mine_selector, getResources().getString(R.string.mine))
