@@ -56,8 +56,8 @@ public class MineFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, mView);
-        mTestThread = new TestThread();
-        mTestThread.start();
+//        mTestThread = new TestThread();
+//        mTestThread.start();
         return mView;
     }
 

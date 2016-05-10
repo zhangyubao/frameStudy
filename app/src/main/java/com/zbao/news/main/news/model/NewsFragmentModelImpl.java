@@ -1,8 +1,8 @@
 package com.zbao.news.main.news.model;
 
 import com.zbao.news.entity.JokeInf;
-import com.zbao.news.internet.InternetService;
-import com.zbao.news.internet.RetrofitWapper;
+import com.zbao.news.network.InternetService;
+import com.zbao.news.network.RetrofitWapper;
 
 import retrofit2.Call;
 import retrofit2.Callback;

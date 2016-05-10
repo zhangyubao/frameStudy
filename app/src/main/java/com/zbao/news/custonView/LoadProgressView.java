@@ -43,11 +43,13 @@ public class LoadProgressView extends View {
     // 字的高度
     private float mTxtHeight;
     // 总进度
-    private int mTotalProgress = 3;
+    private int mTotalProgress = 100;
     // 当前进度
     private int mProgress;
 
     private float mTextSize;
+
+    private String mText;
 
     public LoadProgressView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -107,7 +109,7 @@ public class LoadProgressView extends View {
             oval.right = mRingRadius * 2 + (mXCenter - mRingRadius);
             oval.bottom = mRingRadius * 2 + (mYCenter - mRingRadius);
             canvas.drawArc(oval, -90, ((float) mProgress / mTotalProgress) * 360, false, mRingPaint); //
-            String txt = mProgress + "";
+            String txt = mText;
             mTxtWidth = mTextPaint.measureText(txt, 0, txt.length());
             canvas.drawText(txt, mXCenter - mTxtWidth / 2, mYCenter + mTxtHeight / 4, mTextPaint);
         }
@@ -118,4 +120,8 @@ public class LoadProgressView extends View {
         postInvalidate();
     }
 
+    public void setText(String mText) {
+        this.mText = mText;
+        postInvalidate();
+    }
 }

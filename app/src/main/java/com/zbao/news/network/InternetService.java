@@ -1,4 +1,4 @@
-package com.zbao.news.internet;
+package com.zbao.news.network;
 
 import com.zbao.news.entity.JokeInf;
 

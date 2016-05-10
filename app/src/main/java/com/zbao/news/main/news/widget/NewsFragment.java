@@ -13,7 +13,7 @@ import com.orhanobut.logger.Logger;
 import com.zbao.news.R;
 import com.zbao.news.base.BaseFragment;
 import com.zbao.news.entity.JokeInf;
-import com.zbao.news.internet.InternetService;
+import com.zbao.news.network.InternetService;
 import com.zbao.news.main.news.adapter.JokeRectclerAdapter;
 import com.zbao.news.main.news.presenter.NewsFragmentPresenterImpl;
 import com.zbao.news.main.news.view.NewFragmentView;

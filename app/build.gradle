@@ -10,6 +10,14 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+        ndk {
+            /*生成的so名字*/
+            moduleName "news"
+            /*输出指定三种abi体系结构下的so库*/
+            abiFilters "armeabi", "armeabi-v7a", "x86"
+        }
+
     }
     buildTypes {
         release {
@@ -17,7 +25,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    /*C 代码存放的文件目录*/
+    sourceSets {
+        main {
+            jni.srcDirs = ['src/main/jni', 'src/main/jni/']
+        }
+    }
 }
+
 /*
  平台免入侵框架so库
 native_dependencies {
@@ -45,7 +60,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:recyclerview-v7:23.3.0'
     compile 'com.android.support:cardview-v7:23.3.0'
-    /*id注入*/
+    /*view注入框架*/
     compile 'com.jakewharton:butterknife:7.0.1'
     /*json解析*/
     compile 'com.google.code.gson:gson:2.4'
@@ -66,4 +81,3 @@ dependencies {
     /*平台免入侵框架*/
     /*compile 'com.taobao.android:dexposed:0.1.1@aar'*/
 }
-apply plugin: 'maven'
