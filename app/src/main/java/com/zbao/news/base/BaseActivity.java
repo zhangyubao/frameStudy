@@ -12,6 +12,10 @@ import com.orhanobut.logger.Logger;
 import butterknife.ButterKnife;
 
 /**
+ * 1、集成ButterKnife View 注入框架
+ * <p/>
+ * 2、集成EventBus 事件总线框架
+ * <p/>
  * Created by zhangYB on 2016/4/29.
  */
 public abstract class BaseActivity extends AppCompatActivity {
@@ -28,10 +32,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         Logger.init().hideThreadInfo().setLogLevel(LogLevel.FULL);
     }
 
-
     @Override
-    public void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
+    protected void onDestroy() {
+        super.onDestroy();
         ButterKnife.unbind(this);
     }
 

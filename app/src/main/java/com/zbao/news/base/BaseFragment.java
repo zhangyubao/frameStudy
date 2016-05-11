@@ -98,4 +98,9 @@ public abstract class BaseFragment extends Fragment {
         super.onDestroyView();
         ButterKnife.unbind(this);
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 }

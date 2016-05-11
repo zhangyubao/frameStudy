@@ -2,6 +2,7 @@ package com.zbao.news.main.mine.widget;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,9 @@ import android.widget.TextView;
 import com.orhanobut.logger.Logger;
 import com.zbao.news.R;
 import com.zbao.news.base.BaseFragment;
+import com.zbao.news.entity.MessageEvent;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -52,12 +56,18 @@ public class MineFragment extends BaseFragment {
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, mView);
 //        mTestThread = new TestThread();
 //        mTestThread.start();
+        EventBus.getDefault().post(new MessageEvent("EventBus Demo~~~~~~"));
         return mView;
     }
 

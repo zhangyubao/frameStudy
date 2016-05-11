@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 
-import com.orhanobut.logger.Logger;
 import com.zbao.news.base.BaseActivity;
 import com.zbao.news.custonView.LoadProgressView;
 import com.zbao.news.utils.SharedPreferenceUtils;
@@ -30,10 +29,9 @@ public class FlashActivity extends BaseActivity {
     @Bind(R.id.lpv_enter)
     LoadProgressView mProgressView;
 
-    static {
-        System.loadLibrary("news");
-    }
-
+//    static {
+//        System.loadLibrary("news");
+//    }
 
     /**
      * java JNI 使用
@@ -53,14 +51,13 @@ public class FlashActivity extends BaseActivity {
      *
      * @return
      */
-    private native String getUrl();
+//    private native String getUrl();
 
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             mProgressView.setText("跳过");
-            Logger.e(getUrl());
             mProgressView.setProgress(SPLASH_TIME);
             if (SPLASH_TIME == 0) {
                 if (SharedPreferenceUtils.getInstallState(mContext)) {
@@ -82,7 +79,7 @@ public class FlashActivity extends BaseActivity {
                 mHandler.sendEmptyMessage(0);
             }
         };
-        mTimer.schedule(mTimerTask, 0, 50);
+        mTimer.schedule(mTimerTask, 0, 10);
     }
 
     @Override

@@ -16,11 +16,15 @@ import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
 import com.zbao.news.base.BaseActivity;
+import com.zbao.news.entity.MessageEvent;
 import com.zbao.news.main.joke.widget.JokesFragment;
 import com.zbao.news.main.mine.widget.MineFragment;
 import com.zbao.news.main.news.widget.NewsFragment;
 import com.zbao.news.main.video.widget.VideoFragment;
 import com.zbao.news.utils.CommonUtil;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.HashMap;
 
@@ -68,6 +72,7 @@ public class MainActivity extends BaseActivity implements OnTabItemSelectListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mManager = getSupportFragmentManager();
+        EventBus.getDefault().register(this);
         addMenuTable();
     }
 
@@ -76,7 +81,7 @@ public class MainActivity extends BaseActivity implements OnTabItemSelectListene
      */
     private void addMenuTable() {
         mController = menuTab.builder()
-                    .addTabItem(R.drawable.menu_new_selector, getResources().getString(R.string.news))
+                .addTabItem(R.drawable.menu_new_selector, getResources().getString(R.string.news))
                 .addTabItem(R.drawable.menu_joke_selector, getResources().getString(R.string.jokes))
                 .addTabItem(R.drawable.menu_video_selector, getResources().getString(R.string.video))
                 .addTabItem(R.drawable.menu_mine_selector, getResources().getString(R.string.mine))
@@ -169,6 +174,16 @@ public class MainActivity extends BaseActivity implements OnTabItemSelectListene
         return super.onKeyDown(keyCode, event);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe
+    public void onReceive(MessageEvent msg) {
+        Logger.e("receive  message ================" + msg.getMessage());
+    }
     /*************************************** Android6.0 动态权限申请开始*****************************/
     /**
      * Android 6.0 动态申请权限
