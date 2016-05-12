@@ -1,1 +1,1 @@
-include ':app', ':greendao-lib'
+include ':app', ':greendao-lib', ':java-base'

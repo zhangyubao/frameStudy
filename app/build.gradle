@@ -8,6 +8,7 @@ android {
 
     signingConfigs {//签名信息
         release {
+            /*测试签名文件*/
             storeFile file("../apk.keystore.jks")
             storePassword "zyb123"
             keyAlias "zbao"

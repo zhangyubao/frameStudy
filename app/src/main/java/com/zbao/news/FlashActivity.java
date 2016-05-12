@@ -6,8 +6,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 
+import com.zbao.news.app.NewsApplication;
 import com.zbao.news.base.BaseActivity;
 import com.zbao.news.custonView.LoadProgressView;
+import com.zbao.news.network.InternetService;
+import com.zbao.news.network.RetrofitHttpsWapper;
 import com.zbao.news.utils.SharedPreferenceUtils;
 
 import java.util.Timer;
@@ -41,7 +44,7 @@ public class FlashActivity extends BaseActivity {
      * <p/>
      * 3、定义native方法
      * static{    //加载so库
-     *      System.loadLibrary("news");
+     * System.loadLibrary("news");
      * }
      * 4、通过javah生成 .h头文件 (注意①命令行进入到G:\AsProject\News\app\src\main>文件夹下②依赖文件E:\assdk\extras\android\m2repository\com\android\support\appcompat-v7\23.3.0\appcompat-v7-23.3.0-sources.jar )
      * G:\AsProject\News\app\src\main>javah -d jni -classpath E:\assdk\platforms\android-23\android.jar;E:\assdk\extras\android\m2repository\com\android\support\appcompat-v7\23.3.0\appcompat-v7-23.3.0-sources.jar;G:\AsProject\News\app\build\intermediates\clas
@@ -73,6 +76,8 @@ public class FlashActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        RetrofitHttpsWapper.build(NewsApplication.getContext()).crate(InternetService.class)
+                .getJokeListByRxjava("desc", 1, 20, "1418816972", "eb46c85bea73462583e38b84c3a25c4b");
         mTimerTask = new TimerTask() {
             @Override
             public void run() {

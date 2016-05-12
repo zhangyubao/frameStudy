@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/greendao-lib" />
+            <option value="$PROJECT_DIR$/java-base" />
           </set>
         </option>
         <option name="myModules">
@@ -18,6 +19,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/greendao-lib" />
+            <option value="$PROJECT_DIR$/java-base" />
           </set>
         </option>
       </GradleProjectSettings>

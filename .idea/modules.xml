@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/News.iml" filepath="$PROJECT_DIR$/News.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/greendao-lib/greendao-lib.iml" filepath="$PROJECT_DIR$/greendao-lib/greendao-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-base/java-base.iml" filepath="$PROJECT_DIR$/java-base/java-base.iml" />
     </modules>
   </component>
 </project>
