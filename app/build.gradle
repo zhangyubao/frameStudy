@@ -1,10 +1,22 @@
 apply plugin: 'com.android.application'
 
 android {
+    /*编译版本的SDK*/
     compileSdkVersion 23
+    /*build tools的版本*/
     buildToolsVersion "23.0.3"
 
+    signingConfigs {//签名信息
+        release {
+            storeFile file("../apk.keystore.jks")
+            storePassword "zyb123"
+            keyAlias "zbao"
+            keyPassword "zyb123"
+        }
+    }
+
     defaultConfig {
+        /*应用的包名*/
         applicationId "com.zbao.news"
         minSdkVersion 15
         targetSdkVersion 23
@@ -19,12 +31,39 @@ android {
         }
 
     }
+    /*多渠道打包配置*/
+    productFlavors {
+        umeng {} /*manifestPlaceholders = [ CHANNEL_NAME:"YINGYONGBAO"]  配置manifest中占位符配置*/
+    }
+
+    // java版本
+    compileOptions {
+        /*sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7*/
+    }
     buildTypes {
+        /*发布版*/
         release {
+            signingConfig android.signingConfigs.release
+            /*是否进行混淆*/
+            minifyEnabled true
+            /*混淆时配置文件的位置*/
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        /*debug版本*/
+        debug {
+            signingConfig android.signingConfigs.release
+            /*是否进行混淆*/
             minifyEnabled false
+            /*混淆时配置文件的位置*/
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    // 移除lint检查的error
+    lintOptions {
+        abortOnError false
+    }
+
     /*C 代码存放的文件目录*/
     sourceSets {
         main {
@@ -41,6 +80,7 @@ native_dependencies {
 }*/
 
 dependencies {
+    // 编译libs目录下的所有jar包
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:support-v4:23.3.0'
