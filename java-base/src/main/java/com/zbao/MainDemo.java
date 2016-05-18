@@ -1,10 +1,5 @@
 package com.zbao;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-
 /**
  * Created by zhangYB on 2016/5/12.
  */
@@ -15,8 +10,13 @@ public class MainDemo {
      *
      * @param args
      */
-    public static void main(String[] args) {
-        ProxyDemo proxyDemo = (ProxyDemo) Proxy.newProxyInstance(ProxyDemo.class.getClassLoader(), new Class<?>[]{ProxyDemo.class}, new InvocationHandler() {
+//    public static void main(String[] args) {
+//        Double number = 100.01;
+//        BigDecimal bd = new BigDecimal(number);
+//        BigDecimal setScale = bd.setScale(2, bd.ROUND_CEILING);
+//        System.out.println(setScale+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+       /* ProxyDemo proxyDemo = (ProxyDemo) Proxy.newProxyInstance(ProxyDemo.class.getClassLoader(), new Class<?>[]{ProxyDemo.class}, new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
@@ -32,6 +32,6 @@ public class MainDemo {
                 System.out.println("method is " + methodName);
                 return null;
             }
-        });
-    }
+        });*/
+//    }
 }

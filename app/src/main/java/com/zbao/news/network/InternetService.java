@@ -1,6 +1,7 @@
 package com.zbao.news.network;
 
 import com.zbao.news.entity.JokeInf;
+import com.zbao.news.entity.User;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -39,4 +40,9 @@ public interface InternetService {
     @GET("/joke/content/list.from")
     Observable<JokeInf> getJokeListByRxjava(@Query("sort") String sort, @Query("page") int page, @Query("pagesize") int pagesize, @Query("time") String time, @Query("key") String key);
 
+
+    @GET("UserController/user.html")
+    Call<User> getList();
+
 }
+

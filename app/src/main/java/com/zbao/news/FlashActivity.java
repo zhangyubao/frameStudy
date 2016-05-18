@@ -6,11 +6,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 
-import com.zbao.news.app.NewsApplication;
 import com.zbao.news.base.BaseActivity;
 import com.zbao.news.custonView.LoadProgressView;
-import com.zbao.news.network.InternetService;
-import com.zbao.news.network.RetrofitHttpsWapper;
 import com.zbao.news.utils.SharedPreferenceUtils;
 
 import java.util.Timer;
@@ -76,8 +73,37 @@ public class FlashActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        RetrofitHttpsWapper.build(NewsApplication.getContext()).crate(InternetService.class)
-                .getJokeListByRxjava("desc", 1, 20, "1418816972", "eb46c85bea73462583e38b84c3a25c4b");
+        /************************自己自定义服务器接口演示代码  start**********************************/
+
+        /**
+         * 此处代码运行起来后会报错,主要是看Logcat输出的日志是否是获取到了信息
+         *
+         *
+         * Logcat：zaoshanghao___zhangyubao_____zhangsan==========
+         *
+         *
+         * 1、修改服务器地址  改为运行服务器的地址
+         *
+         * 2、运行后错误是由于服务器地址改变了 在NewsFragment中数据获取时  空指针异常
+         * */
+       /* Call<User> service = RetrofitWapper.getInstance().create(InternetService.class).getList();
+        service.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                int code = response.code();
+                if (code == 200) {
+                    Logger.d("server connected success~~~~~~~~~~~");
+                    User user = response.body();
+                    Logger.i(user.getNickName() + "___" + user.getPassWord() + "_____" + user.getUserName() + "==========");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Logger.i("Failure !~~~~~~~~~~~~~~~~~~~~" + t.getMessage());
+            }
+        });*/
+        /************************自己自定义服务器接口演示代码  end************************************/
         mTimerTask = new TimerTask() {
             @Override
             public void run() {

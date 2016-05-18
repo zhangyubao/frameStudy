@@ -56,6 +56,9 @@ public class RetrofitHttpsWapper {
         OkHttpClient okHttpClient = null;
         InputStream inputStream = null;
         try {
+            /*Note：
+             *此处要替换成自己的证书
+             */
             inputStream = mContext.getResources().openRawResource(R.raw.certificate);
             //读取证书
             CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
@@ -72,7 +75,7 @@ public class RetrofitHttpsWapper {
             //创建会话客户端
             okHttpClient = new OkHttpClient();
             OkHttpClient.Builder builder = okHttpClient.newBuilder();
-            /*设置缓存文件*/
+            //设置缓存文件
             File cacheDir = new File(mContext.getCacheDir(), RESPONSE_CACHE);
             builder.cache(new Cache(cacheDir, CACHE_SIZE));
             // 设置信任服务器主机
