@@ -25,6 +25,10 @@
         <activity
             android:name=".GuideaActivity"
             android:exported="false"/>
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

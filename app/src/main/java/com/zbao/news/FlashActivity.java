@@ -23,6 +23,11 @@ public class FlashActivity extends BaseActivity {
 
     private int SPLASH_TIME = 100;
 
+    /**
+     * 当前的登录状态
+     */
+    private boolean isLogging = true;
+
     private Timer mTimer = new Timer();
     private TimerTask mTimerTask;
 
@@ -61,7 +66,9 @@ public class FlashActivity extends BaseActivity {
             mProgressView.setProgress(SPLASH_TIME);
             if (SPLASH_TIME == 0) {
                 if (SharedPreferenceUtils.getInstallState(mContext)) {
-                    enterMain();
+                    if (isLogging) {
+                        goLogin();
+                    }
                 } else {
                     enterGuide();
                 }
@@ -69,6 +76,14 @@ public class FlashActivity extends BaseActivity {
             SPLASH_TIME = SPLASH_TIME - 1;
         }
     };
+
+    /**
+     * 进入登录界面
+     */
+    private void goLogin() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
