@@ -81,8 +81,8 @@ public class FlashActivity extends BaseActivity {
      * 进入登录界面
      */
     private void goLogin() {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
     }
 
     @Override

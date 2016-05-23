@@ -91,7 +91,7 @@ public class LoginActivity extends BaseActivity {
         }
 
         /**
-         * 指纹衍生成功回调
+         * 指纹验证成功回调
          * <p/>
          * 当验证的指纹成功时会回调此函数，然后不再监听指纹sensor
          *
