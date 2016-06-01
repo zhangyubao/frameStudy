@@ -12,7 +12,10 @@ import android.widget.Toast;
  */
 public class CommonUtil {
 
-
+    //工具类不允许创建对象
+    private CommonUtil() {
+        throw new AssertionError("No instances.");
+    }
     /**
      * 吐司消息提示
      *

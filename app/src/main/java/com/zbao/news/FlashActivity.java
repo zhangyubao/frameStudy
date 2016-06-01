@@ -7,7 +7,7 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 
 import com.zbao.news.base.BaseActivity;
-import com.zbao.news.custonView.LoadProgressView;
+import com.zbao.news.customView.LoadProgressView;
 import com.zbao.news.utils.SharedPreferenceUtils;
 
 import java.util.Timer;

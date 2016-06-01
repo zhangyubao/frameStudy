@@ -22,6 +22,11 @@ public class ChannelUtil {
     private static final String CHANNEL_VERSION_KEY = "cztchannel_version";
     private static String mChannel;
 
+    //工具类不允许创建对象
+    private ChannelUtil() {
+        throw new AssertionError("No instances.");
+    }
+
     /**
      * 返回市场。  如果获取失败返回""
      *

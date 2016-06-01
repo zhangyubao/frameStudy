@@ -8,6 +8,11 @@ import android.content.SharedPreferences;
  */
 public class SharedPreferenceUtils {
 
+    //工具类不允许创建对象
+    private SharedPreferenceUtils() {
+        throw new AssertionError("No instances.");
+    }
+
     /**
      * 保存安装状态
      *
